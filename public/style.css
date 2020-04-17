@@ -1,0 +1,123 @@
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+#app > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.2em;
+
+  padding: .5em;
+
+  background: #46e;
+  box-shadow: 0 2px 8px black;
+  z-index: 2;
+}
+
+#app-name {
+  font-size: 2em;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+#job-search {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#fulltime {
+  display: none;
+}
+
+#fulltime-label {
+  padding: .25em .5em;
+  height: 2em;
+  line-height: 1.5em;
+  background: coral;
+  font-size: 1em;
+  margin-right: .5em;
+}
+
+#fulltime-label::after {
+  content: " [X]"
+}
+
+#fulltime:checked + #fulltime-label {
+  background: lightgreen;
+}
+
+#fulltime:checked + #fulltime-label::after {
+  content: " [✓]"
+}
+
+#job-search input,
+#job-search button  {
+  padding: .25em .5em;
+  outline: none;
+  font-size: 1em;
+}
+
+#job-search input {
+  border-bottom: 2px solid transparent;
+}
+
+#job-search input:focus {
+  border-bottom: 2px solid black;
+}
+
+#job-search button {
+  margin-left: .5em;
+}
+
+#app > main {
+  flex: 1;
+  overflow-y: scroll;
+  background: #7bf;
+  position: relative;
+}
+
+#cow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#app > footer {
+  background: #adf;
+  padding: .5em;
+
+  box-shadow: 0 -1px 4px black;
+  z-index: 2;
+}
+
+#weather {
+  display: flex;
+  justify-content: center;
+}
+
+#weather img:not(:last-of-type) {
+  margin-right: 2em;
+}
+
+#weather img:first-of-type {
+  border: 1px solid green;
+}

@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevJobz</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <span id="app-name">DevJobz</span>
+        <form id="job-search" autocomplete="off" method="POST" action="/job-search">
+          <input
+            id="fulltime"
+            name="fulltime"
+            type="checkbox"
+          />
+          <label id="fulltime-label" for="fulltime">Full Time</label>
+          <input 
+            id="description" 
+            name="description"
+            type="text" 
+            placeholder="search terms"
+          />
+          <button>SEARCH</button>
+        </form>
+      </header>
+      <main>
+        <div id="results"></div>
+      </main>
+      <footer>
+        <div id="weather"></div>
+      </footer>
+    </div>
+  </body>
+</html>
