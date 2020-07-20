@@ -1,17 +1,24 @@
-function getResults() {
-    let fulltime = $('#fulltime');
-    let checked = fulltime.prop('checked');
-    let description = $('#description').val();
-    const request = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            fulltime: checked,
-            description: description,
-        }),
-    };
-    return getResults;
+async function getResults() {
+    try {
+        const response = await fetch(`/job-search`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                description: $("#description").val(),
+                fulltime: $("#fulltime").val()
+            })
+        });
+        const { results } = await response.json();
+        console.log("these are the results:", results);
+        return results;
+    } catch (error) {
+        console.log(error)
+    }
 }
+
+getResults();
 
 $('#job-search').on('submit', async function (event) {
     event.preventDefault();
