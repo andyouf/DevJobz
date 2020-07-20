@@ -1,3 +1,4 @@
+// const { PORT = 3000, WEATHER_KEY } = process.env;
 const express = require('express');
 const server = express();
 const axios = require('axios')
@@ -29,12 +30,13 @@ server.post('/job-search', async (req, res) => {
             }`;
 
         const { data } = await axios.get(URL);
-
-
-
-
-
         res.send({ results: data });
+
+
+
+
+
+
     } catch (error) {
         res.send({ error });
     }
@@ -49,6 +51,16 @@ server.get('/cowspiration', (req, res) => {
     });
 
     res.send({ cow });
+});
+server.get('/hello', (req, res, next) => {
+    res.send(`
+    <html>
+    <head></head>
+    <body>
+      <h3>Hello!</h3>
+    </body>
+    </html>
+    `)
 });
 
 console.log(cowsay.say({

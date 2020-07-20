@@ -1,29 +1,41 @@
-const BASE_URL = 'https://jobs.github.com/positions'
+function getResults() {
+    let fulltime = $('#fulltime');
+    let checked = fulltime.prop('checked');
+    let description = $('#description').val();
+    const request = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            fulltime: checked,
+            description: description,
+        }),
+    };
+    return getResults;
+}
 
-async function getResults(endpointURL) {
+$('#job-search').on('submit', async function (event) {
+    event.preventDefault();
     try {
-        const response = await fetch(endpointURL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" }
-        })
-
-        const data = await response.json();
-        console.log(data);
-        return data;
-
+        const response = await fetch(`/job-search`, getResults());
+        const { results } = await response.json();
+        updateResults(results);
     } catch (error) {
-        console.log(error);
+        console.error;
     }
+});
+
+
+
+
+function updateResults(results) {
+    const root = $('#results');
+    root.empty();
+    results.forEach(function (results) {
+        root.append(renderResults(results));
+        console.log(data);
+    });
 }
 
-async function updateResults() {
-    const fullTime = $("#fulltime#").val();
-    const description = $("#description").val();
-    const data = await getResults('http:///localhost:3000/job-search')
-    renderResults(data);
-
-    console.log(data);
-}
 
 function renderResults(results) {
     const { id, type, company, location, title, description, how_to_apply }
@@ -40,9 +52,4 @@ function renderResults(results) {
     </div>
     </div>`).data("results", results)
     return resultEl
-}
-renderResults()
-
-function bootstrap() {
-    updateResults();
 }
