@@ -48,3 +48,12 @@ function renderResults(results) {
     </div>`).data("results", results)
     return resultEl
 }
+
+async function fetchQuote() {
+    const response = await fetch('/cowspiration');
+    const { cow } = await response.json();
+
+    $('#results').empty().append($(`<pre class="cow">${cow}</pre>`).addClass('open'))
+}
+
+fetchQuote();
