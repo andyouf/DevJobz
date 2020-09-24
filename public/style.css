@@ -23,7 +23,7 @@ html {
 
   font-size: 1.2em;
 
-  padding: .5em;
+  padding: 0.5em;
 
   background: #46e;
   box-shadow: 0 2px 8px black;
@@ -48,16 +48,16 @@ html {
 }
 
 #fulltime-label {
-  padding: .25em .5em;
+  padding: 0.25em 0.5em;
   height: 2em;
   line-height: 1.5em;
   background: coral;
   font-size: 1em;
-  margin-right: .5em;
+  margin-right: 0.5em;
 }
 
 #fulltime-label::after {
-  content: " [X]"
+  content: " [X]";
 }
 
 #fulltime:checked + #fulltime-label {
@@ -65,12 +65,12 @@ html {
 }
 
 #fulltime:checked + #fulltime-label::after {
-  content: " [✓]"
+  content: " [✓]";
 }
 
 #job-search input,
-#job-search button  {
-  padding: .25em .5em;
+#job-search button {
+  padding: 0.25em 0.5em;
   outline: none;
   font-size: 1em;
 }
@@ -84,7 +84,7 @@ html {
 }
 
 #job-search button {
-  margin-left: .5em;
+  margin-left: 0.5em;
 }
 
 #app > main {
@@ -103,7 +103,7 @@ html {
 
 #app > footer {
   background: #adf;
-  padding: .5em;
+  padding: 0.5em;
 
   box-shadow: 0 -1px 4px black;
   z-index: 2;
