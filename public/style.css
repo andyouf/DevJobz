@@ -7,6 +7,7 @@
 
 html {
   font-size: 18px;
+  font-family: sans-serif;
 }
 
 #app {
@@ -33,7 +34,6 @@ html {
 #app-name {
   font-size: 2em;
   color: #fff;
-  font-family: sans-serif;
   font-weight: bold;
 }
 
@@ -128,6 +128,7 @@ html {
   display: flex;
   justify-content: center;
   height: 5rem;
+  color: whitesmoke;
 }
 
 #weather img:not(:last-of-type) {
