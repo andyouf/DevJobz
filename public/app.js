@@ -2,9 +2,9 @@ async function fetchResults() {
   try {
     const url = `/job-search`;
     const response = await fetch(url, {
-      // Use fetch() to POST JSON-encoded data
+      // use fetch() to POST JSON-encoded data
       method: "POST",
-      // header used as info for app, the browser doesn't care what it is it could be bananas at the pasta party, the browser just returns the data from the AJAX call .. still need to parse as JSON
+      // header used as info for app, the browser doesn't care what it is it could be bananas at the pasta party, the browser just returns the data from the AJAX call ... still need to parse as JSON
       headers: {
         "Content-Type": `application/json`,
       },
@@ -90,7 +90,7 @@ async function fetchWeather() {
       const response = await fetch(`/weather?lat=${latitude}&lon=${longitude}`);
       const { results } = await response.json();
 
-      // AJAX request to grab the data and icons then append
+      // AJAX request to get data and icons then append
       if (results.daily) {
         $("#weather").empty();
 

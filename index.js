@@ -1,5 +1,5 @@
 require("dotenv").config(); // reads .env file
-const { PORT = 3000, WEATHER_KEY } = process.env; //process is a built-in global object which stores, among other things, environment variables that are specific to whatever computer/process running on this. When deployed to heroku, the port will be different
+const { PORT = 3000, WEATHER_KEY } = process.env; //process is a built-in global object which stores, among other things, environment variables that are specific to whatever computer/process running ... when deployed to heroku, the port will be different
 // pulls in library from node_modules I installed
 const express = require("express"); // code dependent on express, a package/library installed
 // instantiates a new app (web server)
@@ -13,12 +13,11 @@ const morgan = require("morgan");
 server.use(morgan("dev"));
 // static middleware - serves up files stored in the given folder if requested
 server.use(express.static("public")); // opens up the public folder to users on the browser
-
 const bodyParser = require("body-parser");
 // body parser - unpack the HTTP request body and put it in a format that's nice to work with ... puts it on the req.body
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: false })); // unpacking requests that came in urlencoded
-// if someone makes a GET request to app at this URI: run this code...
+// if user makes a GET request to app at this URI: run this code...
 server.post("/job-search", async (req, res) => {
   try {
     const { description, fulltime, location } = req.body;
