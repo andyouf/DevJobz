@@ -1,11 +1,9 @@
-require("dotenv").config();
-const { PORT = 3000, WEATHER_KEY } = process.env;
-
+require("dotenv").config(); // reads .env file
+const { PORT = 3000, WEATHER_KEY } = process.env; //process is a built-in global object which stores, among other things, environment variables that are specific to whatever computer/process running on this. When deployed to heroku, the port will be different
 // pulls in library from node_modules I installed
-const express = require("express");
+const express = require("express"); // code dependent on express, a package/library installed
 // instantiates a new app (web server)
-const server = express();
-
+const server = express(); // initiates/activates express, stores it in a variable 'app', allows server activation
 const axios = require("axios");
 const cowsay = require("cowsay");
 const Quote = require("inspirational-quotes");
@@ -14,7 +12,7 @@ const morgan = require("morgan");
 // actually hooks up morgan middleware to instance of web server
 server.use(morgan("dev"));
 // static middleware - serves up files stored in the given folder if requested
-server.use(express.static("public"));
+server.use(express.static("public")); // opens up the public folder to users on the browser
 
 const bodyParser = require("body-parser");
 // body parser - unpack the HTTP request body and put it in a format that's nice to work with ... puts it on the req.body
@@ -79,9 +77,14 @@ server.get("/weather", async (req, res) => {
   }
 });
 
-// setting up app to run indefinitely ... listening on given port
+// setting up app to run indefinitely ... listening on given port and runs callback once it starts
 server.listen(PORT, () => {
   console.log("I am listening....");
 });
 
-//test
+// browser>express server>JSON API
+// fetch = broswer, express ... axios = express, JSON API
+// HTTP request from browser flows through, HTTP response from API flows through
+
+// in order to deploy run `heroku create` ONCE to initialize the app
+// then to push any updates to our code run `git push heroku` to deploy new code

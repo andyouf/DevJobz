@@ -2,10 +2,13 @@ async function fetchResults() {
   try {
     const url = `/job-search`;
     const response = await fetch(url, {
+      // Use fetch() to POST JSON-encoded data
       method: "POST",
+      // header used as info for app, the browser doesn't care what it is it could be bananas at the pasta party, the browser just returns the data from the AJAX call .. still need to parse as JSON
       headers: {
         "Content-Type": `application/json`,
       },
+      // if I do not use JQuery to tell browser what to do with result, it will use content-type to detect what to do with result
       body: JSON.stringify({
         description: $("#description").val(),
         fulltime: $("#fulltime").val(),
@@ -48,11 +51,12 @@ function createResults(result) {
 }
 
 function renderResults(results) {
+  // loop over
   results.forEach((result) => {
     $("#results").append(createResults(result));
   });
 }
-
+// trigger submit event (user click)
 $("#job-search").on("submit", function (event) {
   event.preventDefault();
 
