@@ -127,6 +127,7 @@ html {
 #weather {
   display: flex;
   justify-content: center;
+  height: 3rem;
 }
 
 #weather img:not(:last-of-type) {
