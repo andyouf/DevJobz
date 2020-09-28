@@ -32,7 +32,7 @@ html {
 
 #app-name {
   font-size: 2em;
-  color: white;
+  color: #fff;
   font-family: sans-serif;
   font-weight: bold;
 }
@@ -51,7 +51,7 @@ html {
   padding: 0.25em 0.5em;
   height: 2em;
   line-height: 1.5em;
-  background: white;
+  background: #fff;
   font-size: 1em;
   margin-right: 0.5em;
 }
@@ -85,13 +85,13 @@ html {
 
 #job-search button {
   margin-left: 0.5em;
-  background: white;
+  background: #fff;
 }
 
 #app > main {
   flex: 1;
   overflow-y: scroll;
-  background: white;
+  background: #fff;
   position: relative;
   padding: 10px;
 }
