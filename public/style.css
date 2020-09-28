@@ -25,15 +25,15 @@ html {
 
   padding: 0.5em;
 
-  background: #46e;
+  background: whitesmoke;
   box-shadow: 0 2px 8px black;
   z-index: 2;
 }
 
 #app-name {
   font-size: 2em;
-  color: white;
-  font-family: monospace;
+  color: grey;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
@@ -51,7 +51,7 @@ html {
   padding: 0.25em 0.5em;
   height: 2em;
   line-height: 1.5em;
-  background: coral;
+  background: gray;
   font-size: 1em;
   margin-right: 0.5em;
 }
@@ -85,13 +85,28 @@ html {
 
 #job-search button {
   margin-left: 0.5em;
+  background: gray;
 }
 
 #app > main {
   flex: 1;
   overflow-y: scroll;
-  background: #7bf;
+  background: white;
   position: relative;
+  padding: 10px;
+}
+
+.result {
+  border: 1px solid black;
+  padding: 20px;
+}
+.result p {
+  padding: 8px;
+  color: rgb(85, 7, 7);
+}
+
+.result img {
+  max-width: 300px;
 }
 
 #cow {
@@ -102,7 +117,7 @@ html {
 }
 
 #app > footer {
-  background: #adf;
+  background: whitesmoke;
   padding: 0.5em;
 
   box-shadow: 0 -1px 4px black;
@@ -119,5 +134,5 @@ html {
 }
 
 #weather img:first-of-type {
-  border: 1px solid green;
+  border: 1px rgb(85, 7, 7);
 }
