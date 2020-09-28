@@ -81,7 +81,7 @@ server.get("/weather", async (req, res) => {
   }
 });
 
-// setting up app to run indefinitely, listening on given port
+// setting up app to run indefinitely ... listening on given port
 server.listen(PORT, () => {
   console.log("I am listening....");
 });
